@@ -1,16 +1,17 @@
 {
-	"name": "shader",
-	"displayName": "Shader languages support for VS Code",
-	"description": "Syntax highlighter for shader language (hlsl, glsl, cg) ",
-	"version": "1.1.5",
-	"publisher": "slevesque",
+	"name": "shader-with-metal",
+	"displayName": "Shader languages support",
+	"description": "Syntax highlighter for shader language (hlsl, glsl, cg, metal) ",
+	"version": "1.0.0",
+	"publisher": "Okerew",
 	"categories": [
 		"Programming Languages"
 	],
 	"activationEvents": [
 		"onLanguage:hlsl",
 		"onLanguage:glsl",
-		"onLanguage:cg"
+		"onLanguage:cg",
+		"onLanguage:metal"
 	],
 	"main": "./out/extension",
 	"license": "LICENSE.md",
@@ -34,7 +35,8 @@
 		"shader",
 		"hlsl",
 		"glsl",
-		"Cg"
+		"Cg",
+		"Metal"
 	],
 	"contributes": {
 		"languages": [
@@ -85,6 +87,12 @@
 					".cg"
 				],
 				"configuration": "./cg.configuration.json"
+			},
+			{
+				"id": "metal",
+				"extensions": [
+					".metal"
+				]
 			}
 		],
 		"grammars": [
@@ -136,6 +144,31 @@
 				],
 				"embeddedLanguages": {
 					"source.cg": "cg"
+				}
+			},
+			{
+				"language": "metal",
+				"scopeName": "source.metal",
+				"path": "./syntaxes/metal.tmLanguage"
+			},
+			{
+				"scopeName": "source.swift.metal",
+				"path": "./syntaxes/metal-swift.tmlLanguage.json",
+				"injectTo": [
+					"source.swift"
+				],
+				"embeddedLanguages": {
+					"source.metal": "metal"
+				}
+			},
+			{
+				"scopeName": "source.objc.metal",
+				"path": "./syntaxes/metal-objc.tmlLanguage.json",
+				"injectTo": [
+					"source.objc"
+				],
+				"embeddedLanguages": {
+					"source.metal": "metal"
 				}
 			}
 		],
