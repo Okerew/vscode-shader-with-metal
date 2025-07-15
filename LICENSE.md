@@ -1,5 +1,5 @@
 # The MIT License (MIT)
-**Copyright © 2025 Okerew**
+**Copyright © 2015 Stef Levesque**
 
 * * *
 
