@@ -1,9 +1,6 @@
-# vscode-shader
+# vscode-shader-with-metal
 
-[![GitHub issues](https://img.shields.io/github/issues/stef-levesque/vscode-shader.svg)](https://github.com/stef-levesque/vscode-shader/issues)
-[![GitHub license button](https://img.shields.io/github/license/stef-levesque/vscode-shader.svg)](https://github.com/stef-levesque/vscode-shader/blob/master/LICENSE.md)
-[![VS Code marketplace button](https://vsmarketplacebadge.apphb.com/installs/slevesque.shader.svg)](https://marketplace.visualstudio.com/items/slevesque.shader)
-[![Gitter chat button](https://img.shields.io/gitter/room/stef-levesque/vscode-shader.svg)](https://gitter.im/stef-levesque/vscode-shader)
+This is a fork of https://github.com/stef-levesque/vscode-shader if you don't need metal shader support yet stumbled upon this repo download their's version.
 
 ## Description
 
