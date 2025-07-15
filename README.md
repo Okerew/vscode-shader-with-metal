@@ -9,6 +9,7 @@ Shader languages support for VS Code
 * `HLSL` - High-Level Shading Language
 * `GLSL` - OpenGL Shading Language
 * `Cg` - C for Graphics
+* `Metal`- Apple Metal
 
 ## Main Features
 
