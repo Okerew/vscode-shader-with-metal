@@ -1,0 +1,74 @@
+{
+    "scopeName": "source.objc.metal",
+    "injectionSelector": "L:source.objc",
+    "patterns": [
+        {
+            "include": "#metal-string-literal"
+        },
+        {
+            "include": "#metal-multiline-string"
+        }
+    ],
+    "repository": {
+        "metal-string-literal": {
+            "begin": "@\"",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.objc"
+                }
+            },
+            "end": "\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.objc"
+                }
+            },
+            "name": "metal.string.literal.objc",
+            "patterns": [
+                {
+                    "contentName": "source.metal",
+                    "begin": "(?i)(?=.*\\b(kernel|vertex|fragment|#include <metal_stdlib>|using namespace metal|texture2d|sampler|constant|device|threadgroup)\\b)",
+                    "end": "(?=\")",
+                    "patterns": [
+                        {
+                            "include": "source.metal"
+                        }
+                    ]
+                }
+            ]
+        },
+        "metal-multiline-string": {
+            "begin": "R\"(?i:metal)(\\()",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.objc"
+                },
+                "1": {
+                    "name": "metal.delimiter.raw.string.objc"
+                }
+            },
+            "end": "\\)(?i:metal)\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.objc"
+                },
+                "1": {
+                    "name": "metal.delimiter.raw.string.objc"
+                }
+            },
+            "name": "metal.raw.string.objc",
+            "patterns": [
+                {
+                    "contentName": "source.metal",
+                    "begin": "(?!\\G)",
+                    "end": "(?i)(?=\\)metal\")",
+                    "patterns": [
+                        {
+                            "include": "source.metal"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

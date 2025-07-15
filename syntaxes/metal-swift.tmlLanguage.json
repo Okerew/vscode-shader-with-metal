@@ -1,0 +1,68 @@
+{
+    "scopeName": "source.swift.metal",
+    "injectionSelector": "L:source.swift",
+    "patterns": [
+        {
+            "include": "#metal-string-literal"
+        },
+        {
+            "include": "#metal-multiline-string"
+        }
+    ],
+    "repository": {
+        "metal-string-literal": {
+            "begin": "\"",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.swift"
+                }
+            },
+            "end": "\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.swift"
+                }
+            },
+            "name": "metal.string.literal.swift",
+            "patterns": [
+                {
+                    "contentName": "source.metal",
+                    "begin": "(?i)(?=.*\\b(kernel|vertex|fragment|#include <metal_stdlib>|using namespace metal|texture2d|sampler|constant|device|threadgroup)\\b)",
+                    "end": "(?=\")",
+                    "patterns": [
+                        {
+                            "include": "source.metal"
+                        }
+                    ]
+                }
+            ]
+        },
+        "metal-multiline-string": {
+            "begin": "\"\"\"",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.swift"
+                }
+            },
+            "end": "\"\"\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.swift"
+                }
+            },
+            "name": "metal.multiline.string.swift",
+            "patterns": [
+                {
+                    "contentName": "source.metal",
+                    "begin": "(?i)(?=.*\\b(kernel|vertex|fragment|#include <metal_stdlib>|using namespace metal|texture2d|sampler|constant|device|threadgroup)\\b)",
+                    "end": "(?=\"\"\")",
+                    "patterns": [
+                        {
+                            "include": "source.metal"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
