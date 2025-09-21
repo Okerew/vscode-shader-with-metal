@@ -2,6 +2,10 @@
 
 This is a fork of https://github.com/stef-levesque/vscode-shader if you don't need metal shader support yet stumbled upon this repo download their's version.
 
+## Deprecated
+
+You should use gpumkat's lsp instead https://github.com/MetalLikeCuda/gpumkat
+
 ## Description
 
 Shader languages support for VS Code
